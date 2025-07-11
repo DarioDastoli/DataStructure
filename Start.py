@@ -1,5 +1,5 @@
-from unsorted_array import *
-from sorted_array import *
+from Arrays.unsorted_array import *
+from Arrays.sorted_array import *
 
 
 a = SortedArray(10)
