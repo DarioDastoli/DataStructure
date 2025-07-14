@@ -1,14 +1,25 @@
-from Arrays.unsorted_array import *
-from Arrays.sorted_array import *
+from Stacks.stack import *
+from Queues.queue_with_stacks import Queue
+s = Queue()
 
+for i in range(4):
+    s.push(i)
 
-a = SortedArray(10)
-for i in range(9):
-    a.insert(i)
+s.traverse(print)
+print('-------------------')
+s.pop()
+s.traverse(print)
+print('-------------------')
 
-a.traverse(print)
+s.push(20)
+s.traverse(print)
 
-a.delete_by_index(4)
-a.traverse(print)
-a.delete(8)
-a.traverse(print)
+s.pop()
+s.traverse(print)
+print('-------------------')
+s.pop()
+s.traverse(print)
+print('-------------------')
+s.pop()
+s.traverse(print)
+print('-------------------')
