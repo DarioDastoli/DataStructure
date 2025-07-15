@@ -13,6 +13,9 @@ class Stack:
         return self._data.delete_from_front()
         
     def peek(self) -> SinglyLinkedList.Node:
-        if self._data._head is None:
+        if self._data.is_empty():
             raise ValueError("Cannot peek at an empty stack")
         return self._data.get(0)
+    
+    def is_empty(self):
+        return self._data.is_empty()

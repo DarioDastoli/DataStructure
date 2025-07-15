@@ -35,3 +35,20 @@ class DoubleLinkedList:
             self._previous = prev_node
             if prev_node is not None:
                 prev_node._next = self
+
+        def insert_in_front(self, data):
+            if self._head is None:
+                self._tail = self._head = DoubleLinkedList.Node(data)
+            else:
+                old_head = self._head
+                self._head = DoubleLinkedList.Node(data)
+                self._head.append(old_head)
+
+        def insert_at_back(self, data):
+            if self._tail is None:
+                self._tail =  self._head = DoubleLinkedList.Node(data)
+            else:
+                old_tail = self._tail
+                self._tail = DoubleLinkedList.Node(data)
+                self._tail.prepend(old_tail)
+    

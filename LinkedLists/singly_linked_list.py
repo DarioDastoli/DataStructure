@@ -20,6 +20,9 @@ class SinglyLinkedList:
     def __init__(self):
         self._head = None
 
+    def is_empty(self):
+        return self._head is None
+
     def insert_to_back(self, data):
         current = self._head
         if current is None:
@@ -81,8 +84,7 @@ class SinglyLinkedList:
         if current is None:
             raise IndexError("Index out of bounds")
         return current.data()
-            
-        
-                
 
-    
+
+
+

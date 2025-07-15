@@ -9,10 +9,10 @@ class Queue:
         self._data.push(value)
 
     def pop(self): #O(n)
-        while self._data._data._head is not None:
+        while not self._data.is_empty():
             self._tempStack.push(self._data.pop())
         deletedValue = self._tempStack.pop()
-        while self._tempStack._data._head is not None:
+        while not self._tempStack.is_empty():
             self._data.push(self._tempStack.pop())
         self._tempStack = Stack()
         return deletedValue
