@@ -1,5 +1,4 @@
 from core import Array
-from typing import Union
 
 class DinamicArray():
     def __init__(self, initial_capacity = 1, typecode = 'l'):
