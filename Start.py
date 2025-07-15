@@ -7,7 +7,7 @@ for i in range(7):
     s.insert_in_front(i)
 
 x = s.search(2)
-s.traverse(print)
+print(s)
 print('----------------------------')
 
 print(x)
@@ -23,7 +23,7 @@ y = s.delete_from_back()
 print(y)
 print('----------------------------')
 
-s.traverse(print)
+print(s)
 print('----------------------------')
 
 
