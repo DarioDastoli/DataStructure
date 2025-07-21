@@ -1,35 +1,22 @@
 from Stacks.stack import *
 from Queues import *
 from LinkedLists.double_lnked_list import DoubleLinkedList 
-s = DoubleLinkedList()
+from Trees.binary_search_tree import BinarySearchTree
+s = BinarySearchTree()
 
-for i in range(7):
-    s.insert_in_front(i)
+s.insert(6)
+s.insert(3)
+s.insert(1)
+s.insert(6)
+s.insert(9)
+s.insert(4)
+s.insert(7)
+s.insert(7)
+s.insert(4)
+s.insert(6)
+s.insert(10)
+s.insert(135)
+s.insert(22)
+s.insert(8)
 
-x = s.search(2)
-print(s)
-print('----------------------------')
-
-print(x)
-
-print('----------------------------')
-
-s.delete_from_front()
-s.traverse(print)
-print('----------------------------')
-
-y = s.delete_from_back()
-
-print(y)
-print('----------------------------')
-
-print(s)
-print('----------------------------')
-
-
-s.delete(2)
-s.traverse(print)
-print('----------------------------')
-
-
-
+s.print_tree()
