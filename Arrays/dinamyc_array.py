@@ -37,3 +37,41 @@ class DinamicArray():
     def traverse(self, callback):
         for index in range(0, self._size):
             callback(self._array[index])
+
+"""
+    Here both max_in_array and min_in_array have O(n) to find the max or the min in the array
+    The advantage of using one function to find and return both, is that i only need to 
+    go throught the array once
+"""
+
+def max_in_array(array):
+    if len(array) == 0:
+        raise Exception('Max of an empty array')
+    max_index = 0
+    for index in range(0, self._size):
+        if array[index] > array[max_index]:
+            max_index = array[index]
+    return max_index, array[max_index]
+
+def min_in_array(array):
+    if len(array) == 0:
+        raise Exception('Min of an empty array')
+    min_index = 0
+    for index in range(0, len(array)):
+        if array[index] < array[min_index]:
+            min_index = array[index]
+    return min_index, array[min_index]
+
+
+def min_and_max_in_array(array):
+    if len(array) == 0:
+        raise Exception('Min and Max of an empty array')
+    min_index = 0
+    max_index = 0
+    for index in range(0, len(array)):
+        if array[index] < array[min_index]:
+            min_index = array[index]
+        if array[index] > array[max_index]:
+            max_index = array[index]
+    return min_index, max_index
+

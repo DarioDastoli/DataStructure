@@ -167,6 +167,15 @@ class DoubleLinkedList:
             result.append(functor(current.data()))
             current = current.next()
         return result
-    
 
-
+    def insert_middle(self, target, new_node: 'DoubleLinkedList.Node'):
+        current = self._head
+        while current is not None:
+            if current.data() == target:
+                new_node.append(current.next())
+                current.append(new_node)
+                if current == self._tail:
+                    self._tail = new_node
+                return
+            current = current.next()
+        raise ValueError(f'No element with value {target} was found in the list')
