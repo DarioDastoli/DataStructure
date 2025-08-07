@@ -1,4 +1,4 @@
-from core import Array
+from Arrays.core import Array
 from typing import Union
 
 class SortedArray():
@@ -18,7 +18,7 @@ class SortedArray():
     
     def __repr__(self) -> str:
 
-        return f'UnsortedArray({repr(self._array._array[:self._size])})'
+        return f'SortedArray({repr(self._array._array[:self._size])})'
     
     def __iter__(self):
         '''
