@@ -161,11 +161,25 @@ class DoubleLinkedList:
 
         
     def traverse(self, functor: Callable[[Any], Any]) -> List[Any]:
+        #functor: Callable[[Any], Any] -> means that functor should be a function (or any callable object)
+        #that takes a single argument of any type (Any) and returns a value of any type (Any).
         current = self._head
         result = []
         while current is not None:
             result.append(functor(current.data()))
             current = current.next()
+        return result
+    
+    """
+        EXERCISE
+        As an exercise, you can add a method to traverse the list in reverse order, from tail to head.
+    """
+    def reverse_traverse(self, functor: Callable[[Any], Any]) -> List[Any]:
+        current = self._tail
+        result = []
+        while current is not None:
+            result.append(functor(current.data()))
+            current = current.previous()
         return result
 
     def insert_middle(self, target, new_node: 'DoubleLinkedList.Node'):

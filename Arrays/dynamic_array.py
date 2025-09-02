@@ -40,8 +40,6 @@ class DinamicArray():
 
 """
     Here both max_in_array and min_in_array have O(n) to find the max or the min in the array
-    The advantage of using one function to find and return both, is that i only need to 
-    go throught the array once
 """
 
 def max_in_array(array):
@@ -53,6 +51,11 @@ def max_in_array(array):
             max_index = array[index]
     return max_index, array[max_index]
 
+"""
+EXERCISE 2.1
+Write the code for a function returning the minimum value in an array and its index.
+Hint: Can you adapt the function max_in_array?
+"""
 def min_in_array(array):
     if len(array) == 0:
         raise Exception('Min of an empty array')
@@ -62,6 +65,11 @@ def min_in_array(array):
             min_index = array[index]
     return min_index, array[min_index]
 
+"""    
+EXERCISE 2.2
+The advantage of using one function to find and return both, is that i only need to 
+go throught the array once, we can get Min and Max in O(n)
+"""
 
 def min_and_max_in_array(array):
     if len(array) == 0:

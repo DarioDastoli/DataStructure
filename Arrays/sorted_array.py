@@ -24,13 +24,16 @@ class SortedArray():
         '''
         Iterate over the values in the sorted array.
 
-        Parameters:
-            None
+        Iterates over the values in the sorted array. The iteration starts at index 0 and
+        goes on until it reaches the end of the array (not the full maximum capacity of the array,
+        just the last stored elements).
 
-        Functionality:
-            Iterates over the values in the sorted array. The iteration starts at index 0 and
-            goes on until it reaches the end of the array (not the full maximum capacity of the array,
-            just the last stored elements).
+        About Yield:
+        Yield is more efficient, memory-wise, and also sometimes execution-wise. 
+        If you iterate over a list of 1,000,000 elements, Python has to generate the entire list 
+        and store the contents in memory before beginning the first iteration. 
+        With a generator (using yield), the elements are created at the time of iteration,
+        so 1,000,000 elements don't need to be pre-calculated first and stored in memory.
         '''
 
         for i in range(self._size):
@@ -58,6 +61,12 @@ class SortedArray():
             self._array[i] = self._array[i + 1]
         self._size -=1
 
+    """
+        EXERCISE
+        3.1 What if we want to implement the delete-by-index method? Describe the abstract
+        steps this algorithm should perform, and then implement it in Python, as part of the
+        SortedArray class.
+    """
     def delete_by_index(self, index):
         for i in range(index, self._size - 1):
             self._array[i] = self._array[i + 1]
@@ -85,6 +94,11 @@ class SortedArray():
                 right = mid_index - 1
         return None
     
+    """
+    EXERCISES
+    3.2 Implement the traverse method for sorted arrays. Then use it to print all the elements
+    in the array in an ascending sequence.
+    """
     def traverse(self, callback):
         for index in range(0, self._size):
             callback(self._array[index])

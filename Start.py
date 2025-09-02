@@ -1,22 +1,25 @@
-from Stacks.stack import *
-from Queues import *
-from LinkedLists.double_lnked_list import DoubleLinkedList 
-from Trees.binary_search_tree import BinarySearchTree
-s = BinarySearchTree()
+from Queues.queue import Queue
 
-s.insert(6)
-s.insert(3)
-s.insert(1)
-s.insert(6)
-s.insert(9)
-s.insert(4)
-s.insert(7)
-s.insert(7)
-s.insert(4)
-s.insert(6)
-s.insert(10)
-s.insert(135)
-s.insert(22)
-s.insert(8)
 
-s.print_tree()
+x = Queue(10)
+
+x.enqueue(1)
+x.enqueue(2)
+x.enqueue(3)
+x.enqueue(4)
+x.enqueue(5)
+
+a = x.peek()
+
+print(f'a = {a}')
+
+b = x.dequeue()
+c = x.dequeue()
+
+print(f'b = {b}')
+print(f'c = {c}')
+print(f'len = {len(x)}')
+
+d = x.peek()
+
+print(f'd = {d}')

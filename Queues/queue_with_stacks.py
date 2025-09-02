@@ -1,5 +1,12 @@
 from Stacks.stack import Stack
 
+"""EXERCISE
+    9.1 As mentioned, it is also possible to use stacks to store a queue's data. One stack, however,
+        is not enough. 
+        Can you find a way to use two stacks to implement a queue?
+        Hint: Either enqueue or dequeue will have to be O(n).
+"""
+
 class Queue:
     def __init__(self):
         self._data = Stack()

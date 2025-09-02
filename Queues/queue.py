@@ -34,3 +34,16 @@ class Queue:
         self._front = (self._front + 1) % self._max_size
         self._size -= 1
         return value
+
+    """
+    EXERCISES
+    9.2 Implement the peek method for the Queue class. 
+        What are the main problems we need to be aware of, and how do we solve them? 
+        Hint: Check out what we did for stacks.
+
+    """
+
+    def peek(self) -> any:
+        if self.is_empty():
+            raise ValueError("Cannot peek from an empty Queue")
+        return self._front # the front element is at self._front.
