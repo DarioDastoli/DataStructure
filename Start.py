@@ -37,13 +37,14 @@ bst.insert(3)
 bst.insert(7)
 bst.insert(9)
 bst.insert(8)
-
+bst.insert(3)
+bst.insert(3)
 
 
 bst.print_tree()
 
-a = bst.predecessor(8)
-b = bst.successor(8)
+a = bst.predecessor(9)
+b = bst.successor(9)
 
 print(f'predecessor - {a}')
 print(f'successor - {b}')

@@ -1,5 +1,4 @@
 from Arrays.sorted_array import SortedArray
-
 class DynamicSortedArray:
     def __init__(self, capacity = 1, typecode = 'l'):
         self._array = SortedArray(capacity)

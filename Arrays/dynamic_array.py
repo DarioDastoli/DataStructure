@@ -1,4 +1,5 @@
 from core import Array
+from typing import Any, Callable
 
 class DinamicArray():
     def __init__(self, initial_capacity = 1, typecode = 'l'):
@@ -20,7 +21,7 @@ class DinamicArray():
         self._array[self._size] = value
         self._size += 1
 
-    def find(self, target):
+    def find(self, target) -> Any:
         for index in range(self._size):
             if self._array[index] == target:
                 return index
@@ -56,7 +57,7 @@ EXERCISE 2.1
 Write the code for a function returning the minimum value in an array and its index.
 Hint: Can you adapt the function max_in_array?
 """
-def min_in_array(array):
+def min_in_array(array) -> Any:
     if len(array) == 0:
         raise Exception('Min of an empty array')
     min_index = 0
@@ -71,7 +72,7 @@ The advantage of using one function to find and return both, is that i only need
 go throught the array once, we can get Min and Max in O(n)
 """
 
-def min_and_max_in_array(array):
+def min_and_max_in_array(array) -> Any:
     if len(array) == 0:
         raise Exception('Min and Max of an empty array')
     min_index = 0

@@ -149,41 +149,55 @@ class BinarySearchTreeParent:
         if self._root is None:
             raise ValueError('No predecessor in an empty tree')
         node = self._search(value)
-        parent = node.get_parent()
-        if node.get_left() is not None:
-            left_subtree_root =  node.get_left()
-            left_subtree_node = left_subtree_root
-            if left_subtree_root is not None:
-                while left_subtree_node.get_right() is not None :
-                    left_subtree_node = left_subtree_node.get_right()
-                return left_subtree_node.value()                
-        if node.get_left() is None:
-            if parent.get_right() is not None and parent.get_right().value() == value:
+        if node is None:
+            return None
+
+        # If node has a left subtree its predecessor is the maximum of that subtree.
+        pred = None
+        left_node = node.get_left()
+        while left_node is not None:
+            # To avoid duplicates i search a left node with a lower value 
+            if left_node.value() < value:
+                pred = left_node
+                left_node = left_node.get_right()
+            else:
+                left_node = left_node.get_left()
+        if pred is not None:
+            return pred.value()
+
+        # If we don't find a predecessor yet, here we go looking for the parent 
+        current = node
+        while current.get_parent():
+            parent = current.get_parent()
+            if parent.value() < value:
                 return parent.value()
-            elif parent.get_left().value() == value:
-                while parent.get_parent() is not None:
-                    climber = parent.get_parent()
-                    if climber is self._root:
-                        return None
-                    if climber.get_right() is not None:
-                        return climber.get_right().value()
+            current = parent
+
+        return None
                     
     def successor(self, value) -> any:
-        pass
         if self._root is None:
             raise ValueError('No successor in an empty tree')
         node = self._search(value)
-        if node.get_right() is not None:
-            right_subtree_root =  node.get_right()
-            left_subtree_node = right_subtree_root
-            while left_subtree_node.get_left() is not None:
-                left_subtree_node = left_subtree_node.get_left()
-            return left_subtree_node.value()
-        elif node.get_parent() is not None:
-            parent = node.get_parent()
-            while parent.value() <= node.value():
-                parent = parent.get_parent()
+        if node is None:
+            return None
+
+        # If node has a right subtree, successor is the lowest node in that subtree
+        right_node = node.get_right()
+        if right_node is not None:
+            while right_node.get_left() is not None:
+                right_node = right_node.get_left()
+            return right_node.value()
+
+        # If we don't find a predecessor yet, here we go looking for the parent 
+        current = node
+        parent = current.get_parent()
+        while parent is not None and current == parent.get_right(): # if current is not a right child, we exit the while
+            current = parent
+            parent = parent.get_parent()
+        if parent is not None:
             return parent.value()
+        return None 
 
             
 
